@@ -1,4 +1,4 @@
-Repository to host the visualizations for iCages.
+Repository to host the visualizations for iCAGES.
 
 
 Please click [here](https://wglab.openbioinformatics.org/GDNNP-visualization/) for the visualizations.

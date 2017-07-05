@@ -1,0 +1,37 @@
+<html>
+	<head>
+		<script src="http://d3js.org/d3.v3.min.js"></script>
+
+	</head>
+
+	<body>
+		<script>
+			var dataArray = [20, 40, 60, 80];
+			var height = 500;
+			var width = 5000;
+
+			// color scale for changing the colors in resulting predicted probabilities
+			var color = d3.scale.linear()
+						.domain([0, 100])
+						.range(["pink", "red"]);
+
+			// appending a canvas for the circle visualization to the body
+			var canvas = d3.select("body")
+						.append("svg")
+						.attr("width", width)
+						.attr("height", height);
+
+			// appending the circles to the canvas
+			var circles = canvas.selectAll("circle")
+							.data(dataArray)
+							.enter()
+							.append("circle")
+							.attr("cx", function(d, i) {return (i+1)*150;})
+							.attr("cy", 200)
+							.attr("fill", function(d) {return color(d);})
+							.attr("r", function(d) {return d});
+
+		</script>
+
+	</body>
+</html>
